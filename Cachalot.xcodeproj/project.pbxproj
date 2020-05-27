@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8350F063247E67D400B4C166 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350F062247E67D400B4C166 /* User.swift */; };
+		8350F065247E8EBB00B4C166 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350F064247E8EBB00B4C166 /* Error.swift */; };
 		8399016D247D05DB001D1CB3 /* Cachalot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83990163247D05DA001D1CB3 /* Cachalot.framework */; };
 		83990172247D05DB001D1CB3 /* CachalotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83990171247D05DB001D1CB3 /* CachalotTests.swift */; };
 		83990174247D05DB001D1CB3 /* Cachalot.h in Headers */ = {isa = PBXBuildFile; fileRef = 83990166247D05DA001D1CB3 /* Cachalot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8399017F247D0D9C001D1CB3 /* Cachalot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399017E247D0D9C001D1CB3 /* Cachalot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +26,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8350F062247E67D400B4C166 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8350F064247E8EBB00B4C166 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		83990163247D05DA001D1CB3 /* Cachalot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cachalot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83990166247D05DA001D1CB3 /* Cachalot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cachalot.h; sourceTree = "<group>"; };
 		83990167247D05DA001D1CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8399016C247D05DB001D1CB3 /* CachalotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CachalotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83990171247D05DB001D1CB3 /* CachalotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachalotTests.swift; sourceTree = "<group>"; };
 		83990173247D05DB001D1CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8399017E247D0D9C001D1CB3 /* Cachalot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachalot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8350F061247E67C700B4C166 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8350F062247E67D400B4C166 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		83990159247D05DA001D1CB3 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +85,7 @@
 		83990165247D05DA001D1CB3 /* Cachalot */ = {
 			isa = PBXGroup;
 			children = (
+				8399017D247D0D57001D1CB3 /* Source */,
 				83990166247D05DA001D1CB3 /* Cachalot.h */,
 				83990167247D05DA001D1CB3 /* Info.plist */,
 			);
@@ -80,10 +95,20 @@
 		83990170247D05DB001D1CB3 /* CachalotTests */ = {
 			isa = PBXGroup;
 			children = (
+				8350F061247E67C700B4C166 /* Models */,
 				83990171247D05DB001D1CB3 /* CachalotTests.swift */,
 				83990173247D05DB001D1CB3 /* Info.plist */,
 			);
 			path = CachalotTests;
+			sourceTree = "<group>";
+		};
+		8399017D247D0D57001D1CB3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8399017E247D0D9C001D1CB3 /* Cachalot.swift */,
+				8350F064247E8EBB00B4C166 /* Error.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +173,7 @@
 				TargetAttributes = {
 					83990162247D05DA001D1CB3 = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 					8399016B247D05DB001D1CB3 = {
 						CreatedOnToolsVersion = 11.4;
@@ -195,6 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8350F065247E8EBB00B4C166 /* Error.swift in Sources */,
+				8399017F247D0D9C001D1CB3 /* Cachalot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8350F063247E67D400B4C166 /* User.swift in Sources */,
 				83990172247D05DB001D1CB3 /* CachalotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +369,7 @@
 		83990178247D05DB001D1CB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -355,6 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Nodes.Cachalot;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,6 +394,7 @@
 		83990179247D05DB001D1CB3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -386,6 +418,7 @@
 		8399017B247D05DB001D1CB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CachalotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -403,6 +436,7 @@
 		8399017C247D05DB001D1CB3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CachalotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

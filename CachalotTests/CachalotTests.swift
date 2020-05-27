@@ -11,24 +11,35 @@ import XCTest
 
 class CachalotTests: XCTestCase {
 
+    var cache: Cacher!
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        cache = Cacher()
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        cache = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_storeCachable() {
+        let user = User.mock
+        cache.save(user, forKey: "User")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_loadCachable() {
+        var user: User? = User.mock
+        cache.save(user!, forKey: "User")
+        user = nil
+        user = cache.value(forKey: "User")
+        
+        XCTAssertNotNil(user, "Failed to load value from cache")
+    }
+    
+    func test_loadNilFromCache() {
+        let value: User? = cache.value(forKey: "Something nil")
+        XCTAssertNil(value, "Loaded invalid data from cache")
     }
 
 }
