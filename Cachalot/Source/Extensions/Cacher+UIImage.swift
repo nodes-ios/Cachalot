@@ -31,10 +31,11 @@ extension Cacher {
     
     public func value(forKey key: String) throws -> UIImage? {
         let destination = path(forKey: key)
-        if let data = try? value(at: destination) {
+        do {
+            let data = try value(at: destination)
             return UIImage(data: data)
-        } else {
+        } catch CocoaError.fileReadNoSuchFile {
             return nil
-        }
+        }        
     }
 }

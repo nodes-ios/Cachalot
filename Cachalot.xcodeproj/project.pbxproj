@@ -15,6 +15,8 @@
 		8399016D247D05DB001D1CB3 /* Cachalot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83990163247D05DA001D1CB3 /* Cachalot.framework */; };
 		83990174247D05DB001D1CB3 /* Cachalot.h in Headers */ = {isa = PBXBuildFile; fileRef = 83990166247D05DA001D1CB3 /* Cachalot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8399017F247D0D9C001D1CB3 /* Cachalot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399017E247D0D9C001D1CB3 /* Cachalot.swift */; };
+		83A144BA248A8FBF00DED51E /* TestImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A144B9248A8FBF00DED51E /* TestImage.swift */; };
+		83A144BC248A903300DED51E /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A144BB248A903300DED51E /* UIImageTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		8399016C247D05DB001D1CB3 /* CachalotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CachalotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83990173247D05DB001D1CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8399017E247D0D9C001D1CB3 /* Cachalot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachalot.swift; sourceTree = "<group>"; };
+		83A144B9248A8FBF00DED51E /* TestImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestImage.swift; sourceTree = "<group>"; };
+		83A144BB248A903300DED51E /* UIImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				8350F062247E67D400B4C166 /* User.swift */,
+				83A144B9248A8FBF00DED51E /* TestImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -72,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				8378451F248A7B5C00077571 /* CodableTests.swift */,
+				83A144BB248A903300DED51E /* UIImageTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -124,6 +130,7 @@
 		83990170247D05DB001D1CB3 /* CachalotTests */ = {
 			isa = PBXGroup;
 			children = (
+				83A144B6248A8CDC00DED51E /* Resources */,
 				8350F061247E67C700B4C166 /* Models */,
 				83784521248A7B7A00077571 /* Tests */,
 				83990173247D05DB001D1CB3 /* Info.plist */,
@@ -139,6 +146,13 @@
 				8399017E247D0D9C001D1CB3 /* Cachalot.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		83A144B6248A8CDC00DED51E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +277,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8350F063247E67D400B4C166 /* User.swift in Sources */,
+				83A144BC248A903300DED51E /* UIImageTests.swift in Sources */,
+				83A144BA248A8FBF00DED51E /* TestImage.swift in Sources */,
 				83784520248A7B5C00077571 /* CodableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
