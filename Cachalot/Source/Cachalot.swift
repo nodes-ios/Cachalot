@@ -8,15 +8,6 @@
 
 import Foundation
 
-public typealias Cachable = DataRepresentable & DataInitializable
-
-public protocol DataRepresentable {
-    var dataRepresentation: Data { get }
-}
-
-public protocol DataInitializable {
-    init(data: Data)
-}
 
 public class Cacher {
     private let fileManager = FileManager.default
@@ -28,7 +19,7 @@ public class Cacher {
         }
         directory = directoryPath
         
-        guard fileManager.fileExists(atPath: directory.absoluteString) else {
+        guard !fileManager.fileExists(atPath: directory.absoluteString) else {
             return
         }
         
@@ -36,31 +27,44 @@ public class Cacher {
                                         attributes: nil)
     }
     
-    public func save<T: Cachable>(_ value: T, forKey key: String) throws {
+    public func save<T: Codable>(_ value: T, forKey key: String) throws {
         let destination = path(forKey: key)
-        try value.dataRepresentation.write(to: destination, options: [.atomicWrite])
+        let data = try encoder.encode(value)
+        try save(data: data, at: destination)
     }
     
-    public func value<T: Cachable>(forKey key: String) -> T? {
+    public func value<T: Codable>(forKey key: String) throws -> T? {
         let destination = path(forKey: key)
-        if let data = try? Data(contentsOf: destination) {
-            return T(data: data)
+        if let data = value(at: destination) {
+            return try decoder.decode(T.self, from: data)
+        } else {
+            return nil
+        }
+        
+    }
+    
+}
+
+extension Cacher {
+    private func save(data: Data, at path: URL) throws {
+        try data.write(to: path, options: [.atomicWrite])
+    }
+    
+    private func value(at path: URL) -> Data? {
+        if let data = try? Data(contentsOf: path) {
+            return data
         } else {
             return nil
         }
     }
 }
 
-
 extension Cacher {
     var directoryPath: URL? {
-        guard
-            let base: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first,
-            let url = URL(string: base)?.appendingPathComponent("Cachalot", isDirectory: true)
-        else {
+        guard let base: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
             return nil
         }
-        return url
+        return URL(fileURLWithPath: base).appendingPathComponent("Cachalot", isDirectory: true)        
     }
     
     func path(forKey key: String) -> URL {
@@ -70,3 +74,6 @@ extension Cacher {
 
 
 
+
+private let decoder = JSONDecoder()
+private let encoder = JSONEncoder()

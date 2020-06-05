@@ -9,7 +9,7 @@
 import Foundation
 import Cachalot
 
-class User: Codable {
+final class User: Codable {
     internal init(id: Int, name: String) {
         self.id = id
         self.name = name
@@ -23,6 +23,5 @@ class User: Codable {
     }
 }
 
-extension User: Cachable {
 
-}
+

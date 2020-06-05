@@ -15,7 +15,7 @@ class CachalotTests: XCTestCase {
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        cache = Cacher()
+        cache = try! Cacher()
     }
 
     override func tearDownWithError() throws {
@@ -25,20 +25,20 @@ class CachalotTests: XCTestCase {
 
     func test_storeCachable() {
         let user = User.mock
-        cache.save(user, forKey: "User")
+        try! cache.save(user, forKey: "User")
     }
     
     func test_loadCachable() {
         var user: User? = User.mock
-        cache.save(user!, forKey: "User")
+        try! cache.save(user!, forKey: "User")
         user = nil
-        user = cache.value(forKey: "User")
+        user = try? cache.value(forKey: "User")
         
         XCTAssertNotNil(user, "Failed to load value from cache")
     }
     
     func test_loadNilFromCache() {
-        let value: User? = cache.value(forKey: "Something nil")
+        let value: User? = try? cache.value(forKey: "Something nil")
         XCTAssertNil(value, "Loaded invalid data from cache")
     }
 
