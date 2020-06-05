@@ -17,9 +17,10 @@ extension Cacher {
     
     public func value<T: Codable>(forKey key: String) throws -> T? {
         let destination = path(forKey: key)
-        if let data = value(at: destination) {
+        do {
+            let data = try value(at: destination)
             return try decoder.decode(T.self, from: data)
-        } else {
+        } catch CocoaError.fileReadNoSuchFile {
             return nil
         }
     }

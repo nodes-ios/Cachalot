@@ -11,6 +11,7 @@
 		8350F065247E8EBB00B4C166 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350F064247E8EBB00B4C166 /* Error.swift */; };
 		8378451E248A7B0A00077571 /* Cacher+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378451D248A7B0A00077571 /* Cacher+Codable.swift */; };
 		83784520248A7B5C00077571 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378451F248A7B5C00077571 /* CodableTests.swift */; };
+		83784525248A806200077571 /* Cacher+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83784524248A806200077571 /* Cacher+UIImage.swift */; };
 		8399016D247D05DB001D1CB3 /* Cachalot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83990163247D05DA001D1CB3 /* Cachalot.framework */; };
 		83990174247D05DB001D1CB3 /* Cachalot.h in Headers */ = {isa = PBXBuildFile; fileRef = 83990166247D05DA001D1CB3 /* Cachalot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8399017F247D0D9C001D1CB3 /* Cachalot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399017E247D0D9C001D1CB3 /* Cachalot.swift */; };
@@ -31,6 +32,7 @@
 		8350F064247E8EBB00B4C166 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		8378451D248A7B0A00077571 /* Cacher+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cacher+Codable.swift"; sourceTree = "<group>"; };
 		8378451F248A7B5C00077571 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
+		83784524248A806200077571 /* Cacher+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cacher+UIImage.swift"; sourceTree = "<group>"; };
 		83990163247D05DA001D1CB3 /* Cachalot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cachalot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83990166247D05DA001D1CB3 /* Cachalot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cachalot.h; sourceTree = "<group>"; };
 		83990167247D05DA001D1CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +76,23 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		83784522248A803900077571 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				8350F064247E8EBB00B4C166 /* Error.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		83784523248A804700077571 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8378451D248A7B0A00077571 /* Cacher+Codable.swift */,
+				83784524248A806200077571 /* Cacher+UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		83990159247D05DA001D1CB3 = {
 			isa = PBXGroup;
 			children = (
@@ -115,9 +134,9 @@
 		8399017D247D0D57001D1CB3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				83784523248A804700077571 /* Extensions */,
+				83784522248A803900077571 /* Error */,
 				8399017E247D0D9C001D1CB3 /* Cachalot.swift */,
-				8350F064247E8EBB00B4C166 /* Error.swift */,
-				8378451D248A7B0A00077571 /* Cacher+Codable.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -232,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83784525248A806200077571 /* Cacher+UIImage.swift in Sources */,
 				8350F065247E8EBB00B4C166 /* Error.swift in Sources */,
 				8378451E248A7B0A00077571 /* Cacher+Codable.swift in Sources */,
 				8399017F247D0D9C001D1CB3 /* Cachalot.swift in Sources */,

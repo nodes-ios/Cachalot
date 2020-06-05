@@ -31,7 +31,7 @@ class CodableTests: XCTestCase {
      
     func test_loadNilCodable() {
         var value: User?
-        XCTAssertNoThrow(value = try? cache.value(forKey: "Something nil"), "Error found when loading nil Codable model from disk")
+        XCTAssertNoThrow(value = try cache.value(forKey: "Something nil"), "Error found when loading nil Codable model from disk")
         XCTAssertNil(value, "Loaded invalid data from cache")
     }
     

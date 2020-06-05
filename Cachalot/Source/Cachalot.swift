@@ -33,12 +33,8 @@ extension Cacher {
         try data.write(to: path, options: [.atomicWrite])
     }
     
-    func value(at path: URL) -> Data? {
-        if let data = try? Data(contentsOf: path) {
-            return data
-        } else {
-            return nil
-        }
+    func value(at path: URL) throws -> Data {
+        return try Data(contentsOf: path)
     }
 }
 
