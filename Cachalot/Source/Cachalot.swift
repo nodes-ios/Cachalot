@@ -25,32 +25,15 @@ public class Cacher {
         
         try fileManager.createDirectory(at: directory, withIntermediateDirectories: true,
                                         attributes: nil)
-    }
-    
-    public func save<T: Codable>(_ value: T, forKey key: String) throws {
-        let destination = path(forKey: key)
-        let data = try encoder.encode(value)
-        try save(data: data, at: destination)
-    }
-    
-    public func value<T: Codable>(forKey key: String) throws -> T? {
-        let destination = path(forKey: key)
-        if let data = value(at: destination) {
-            return try decoder.decode(T.self, from: data)
-        } else {
-            return nil
-        }
-        
-    }
-    
+    }    
 }
 
 extension Cacher {
-    private func save(data: Data, at path: URL) throws {
+    func save(data: Data, at path: URL) throws {
         try data.write(to: path, options: [.atomicWrite])
     }
     
-    private func value(at path: URL) -> Data? {
+    func value(at path: URL) -> Data? {
         if let data = try? Data(contentsOf: path) {
             return data
         } else {
@@ -71,9 +54,3 @@ extension Cacher {
         return directory.appendingPathComponent(key, isDirectory: false)
     }
 }
-
-
-
-
-private let decoder = JSONDecoder()
-private let encoder = JSONEncoder()
